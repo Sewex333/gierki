@@ -1,0 +1,174 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(35, 57, 66);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+
+h1 {
+    margin: 5%;
+}
+
+#game-container {
+    background-color: rgba(29, 33, 89, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+    margin-top: 5%;
+}
+#game-container h1 {
+    margin: 5%;
+}
+#word-display {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#guess-word-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#guess-word {
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #b71c1c;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 18px;
+    margin: 8px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+}
+
+button:hover {
+    background-color: #8c1414;
+}
+
+button:active {
+    background-color: #5a0b0b;
+}
+
+#score-display {
+    font-size: 18px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-score {
+    margin: 5px;
+}
+
+#players-container{
+    font-size: 3rem;
+    background-color: rgba(29, 33, 89, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+    margin-top: 5%;
+}
+
+#players-container input{
+    font-size: 3rem;
+    width:10%;
+}
+
+#players-container button{
+    font-size: 3rem;
+    border-radius: 20px;
+
+}
+#players-container p{
+    font-size:2rem;
+}
+#current-player-display {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+#summary-display{
+    position:absolute;
+    font-size: 3rem;
+    background-color: rgb(29, 33, 89);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+    margin-top: 5%;
+}    
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    background-color: #5a0b0b;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+th, td {
+    border: 5px solid #000000;
+    padding: 10px;
+    text-align: left;
+        }
+th {
+    background-color: #250505;
+  }
+
+tr:hover {
+    background-color: #8c1414;
+}
+
+#powrot{
+    width: 100%;
+    margin-top: auto;
+}
+#powrot a{
+    color:rgb(0, 0, 0);
+    text-decoration: none;
+    font-size:4rem;
+}
+#powrot a:hover{
+    color: #291a1a;
+    font-weight: bold;
+}
+
+#skip-word-button {
+    text-align: right;
+    display: block;
+    background-color: #336699;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 18px;
+    margin: 8px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+}
+
+#skip-word-button:hover {
+    background-color: #265580;
+}
+
+#skip-word-button:active {
+    background-color: #1a3a4f;
+}

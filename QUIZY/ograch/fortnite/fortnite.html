@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz o Fortnite</title>
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <div class="header-container">
+        <h1>Fortnite Quiz!</h1>
+    </div>
+    <div id="quiz-container">
+        <div id="welcome-menu">
+            <p>Witaj w Quizie o Fortnite!</p>
+            <button onclick="startQuiz()">Rozpocznij Quiz</button>
+        </div>
+        <div id="question-container" style="display: none;">
+            <label id="question-text"></label>
+            <div id="options"></div>
+        </div>
+        <div id="result-menu" style="display: none;">
+            <p>Dziękujemy za udzial w quizie!</p>
+            <div id="result-container"></div>
+            <button onclick="restartQuiz()">Zacznij jeszcze raz</button>
+        </div>
+        <div id="powrot">
+        <a href="../index.html">Powrot</a>
+        </div>
+    </div>
+    <script src="js.js"></script>
+</body>
+</html>

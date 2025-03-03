@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#puzzle-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px); /* Dostosuj ilość kolumn */
+    grid-template-rows: repeat(3, 100px); /* Dostosuj ilość wierszy */
+    gap: 5px; /* Dostosuj odstęp między puzzlami */
+}
+
+.puzzle-piece {
+    background: url('zdjecia/1.png') no-repeat;
+    background-size: 300px 300px; /* Dostosuj rozmiar do obrazka */
+    width: 100px; /* Dostosuj szerokość i wysokość kawałków puzzli */
+    height: 100px;
+    border: 1px solid #000;
+    cursor: pointer;
+}

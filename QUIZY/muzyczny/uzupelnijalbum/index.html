@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Album Tracklist</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .album {
+      margin: 20px;
+      text-align: center;
+    }
+
+    .album img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border: 2px solid #333;
+      cursor: pointer;
+    }
+
+    .tracklist {
+      display: none;
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .tracklist h2 {
+      text-align: center;
+    }
+
+    .tracklist ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .tracklist li {
+      margin: 10px 0;
+    }
+
+    input, button {
+      margin: 10px 0;
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Album Tracklist</h1>
+  </header>
+
+  <main id="albumsContainer">
+    <div class="album" onclick="showTracklist('kinematografia')">
+      <img src="paktofonika.jpg" alt="Paktofonika - Kinematografia">
+      <p>Paktofonika - Kinematografia</p>
+    </div>
+  </main>
+
+  <div id="tracklist" class="tracklist">
+    <h2>Tracklist</h2>
+    <ul id="tracklistUl">
+      <!-- Dynamic tracklist will be inserted here -->
+    </ul>
+    <input type="text" id="trackInput" placeholder="Wpisz nazwę utworu">
+    <button onclick="addTrack()">Dodaj utwór</button>
+    <button onclick="autoFillTracklist()">Automatycznie uzupełnij</button>
+    <button onclick="hideTracklist()">Wróć do wyboru albumów</button>
+  </div>
+
+  <script>
+    const originalTracklist = [
+      'Na mocy paktu',
+      'Priorytety',
+      'Gdyby...',
+      'Ja to ja',
+      'Powierzchnie tnące',
+      'ToNieMy',
+      'Popatrz (Uliczny reportaż z dworca)',
+      'Chwile ulotne',
+      'WC',
+      'Nowiny',
+      'Nie ma mnie dla nikogo',
+      'Jestem Bogiem',
+      'Lepiej być nie może',
+      'Rób co chcesz...',
+      'W moich kręgach',
+      '2 kilo'
+    ];
+
+    let currentAlbum = '';
+    let userTracklist = Array(originalTracklist.length).fill('');
+
+    function showTracklist(album) {
+      document.getElementById('tracklist').style.display = 'block';
+      currentAlbum = album;
+      updateTracklist();
+    }
+
+    function updateTracklist() {
+      const tracklistUl = document.getElementById('tracklistUl');
+      tracklistUl.innerHTML = '';
+      userTracklist.forEach((track, index) => {
+        const li = document.createElement('li');
+        li.textContent = track || `Utwór ${index + 1}`;
+        tracklistUl.appendChild(li);
+      });
+    }
+
+    function addTrack() {
+      const trackName = document.getElementById('trackInput').value.trim();
+      const index = userTracklist.findIndex(track => track === '');
+
+      if (index !== -1 && originalTracklist[index].toLowerCase() === trackName.toLowerCase()) {
+        userTracklist[index] = trackName;
+        updateTracklist();
+        document.getElementById('trackInput').value = '';
+      }
+    }
+
+    function autoFillTracklist() {
+      userTracklist = originalTracklist.slice();
+      updateTracklist();
+    }
+
+    function hideTracklist() {
+      document.getElementById('tracklist').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

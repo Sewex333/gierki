@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  .album {
+    margin: 20px;
+    cursor: pointer;
+  }
+  
+  #tracklistPage {
+    text-align: left;
+  }

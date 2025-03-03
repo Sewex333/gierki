@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Wisielec</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <div id="players-container">
+        <h1>Wisielec!!!</h1>
+        <label for="players">Liczba graczy (1-4): </label>
+        <input type="number" id="players" min="1" max="4">
+        <button onclick="startGame()">Rozpocznij Grę</button>       
+        <p>Zasady: Nie uzywaj polskich znaków. Pomiędzy słowa wsadz znak "-" np. hasło: pilka-nozna</p>
+    </div>
+
+    <div id="game-container" style="display: none;">
+        <div id="score-container">
+            <p id="score-display">Wyniki:</p>
+        </div>
+        <div id="word-container">
+            <p id="word-display"></p>
+        </div>
+        <div id="guess-container">
+            <label for="guess">Zgadnij literę: </label>
+            <input type="text" id="guess" maxlength="1">
+            <button onclick="makeGuess()">Zgadnij</button>
+        </div>
+        <div id="guess-word-container" style="display: none;">
+            <label for="guess-word">Zgadnij hasło:</label>
+            <input type="text" id="guess-word" placeholder="Wprowadź hasło">
+            <button onclick="makeWordGuess()">Zgadnij</button>
+            <button onclick="skipWord()" id="skip-word-button">Pomiń Hasło</button>
+        </div>
+    </div>
+    <div id="summary-display" style="display: none;">
+    </div>
+    <div id="powrot">
+        <a href="../index.html">Powrót</a>
+    </div>
+    <script src="wisielec.js"></script>
+</body>
+</html>

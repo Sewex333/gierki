@@ -1,0 +1,90 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ff0000; /* Czerwone tło */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.header-container {
+    display: block;
+    background-color: #000; /* Czarne tło nagłówka */
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    border-radius: 12px;
+    margin-bottom: 5%;
+}
+
+h1 {
+    margin: 5%;
+    color: #ff0000; /* Czerwony kolor tekstu nagłówka */
+}
+
+#quiz-container {
+    background-color: #000; /* Czarne tło quizu */
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+    padding: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+#pytanie {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: #fff; /* Biały kolor tekstu */
+}
+
+label {
+    font-size: 20px;
+    margin-bottom: 15px;
+    display: block;
+    color: #fff; /* Biały kolor tekstu */
+}
+
+button {
+    background-color: #ff0000; /* Czerwony kolor przycisków */
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 18px;
+    margin: 8px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+}
+
+button:hover {
+    background-color: #8c1414;
+}
+
+button:active {
+    background-color: #5a0b0b;
+}
+
+p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff0000; /* Czerwony kolor tekstu */
+}
+
+#powrot {
+    text-align: left;
+    color: #ff0000;
+    text-decoration: none;
+    font-size: 20px;
+    margin-top: 5%;
+}
+
+#powrot a {
+    color: #ff0000;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+a:hover {
+    background-color: #000;
+    color: #ff0000;
+}
