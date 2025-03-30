@@ -1,23 +1,114 @@
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
     margin: 0;
+    padding: 20px;
+}
+
+h1, h3 {
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.controls {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #e9e9e9;
+    border-radius: 8px;
+}
+
+.image-selection {
+    margin-bottom: 15px;
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 3px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.thumbnail:hover {
+    transform: scale(1.05);
+}
+
+.thumbnail.selected {
+    border-color: #4CAF50;
+}
+
+select, button {
+    padding: 8px 15px;
+    margin: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
 }
 
 #puzzle-container {
-    display: grid;
-    grid-template-columns: repeat(3, 100px); /* Dostosuj ilość kolumn */
-    grid-template-rows: repeat(3, 100px); /* Dostosuj ilość wierszy */
-    gap: 5px; /* Dostosuj odstęp między puzzlami */
+    width: 500px;
+    height: 500px;
+    margin: 20px auto;
+    position: relative;
+    border: 2px dashed #ccc;
+    background-color: #f9f9f9;
 }
 
 .puzzle-piece {
-    background: url('zdjecia/1.png') no-repeat;
-    background-size: 300px 300px; /* Dostosuj rozmiar do obrazka */
-    width: 100px; /* Dostosuj szerokość i wysokość kawałków puzzli */
-    height: 100px;
-    border: 1px solid #000;
-    cursor: pointer;
+    position: absolute;
+    border: 1px solid #fff;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    cursor: move;
+    transition: transform 0.1s;
+    z-index: 1;
+}
+
+.puzzle-piece:hover {
+    transform: scale(1.03);
+    z-index: 2;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+
+#original-image {
+    max-width: 300px;
+    max-height: 300px;
+    margin: 20px auto;
+    display: block;
+    border: 1px solid #ddd;
 }

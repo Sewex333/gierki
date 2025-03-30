@@ -2,24 +2,39 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Puzzle Pogoni</title>
-    <link rel="stylesheet" type="text/css" href="styl.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Układanie puzzli ze zdjęć</title>
+    <link rel="stylesheet" href="styl.css">
 </head>
 <body>
-    <div id="main">
-        <div id="puzzle-container">
-            <!-- Dodaj więcej kawałków puzzli, każdy z unikalnym ID -->
-            <div class="puzzle-piece" id="piece1"></div>
-            <div class="puzzle-piece" id="piece2"></div>
-            <div class="puzzle-piece" id="piece3"></div>
-            <div class="puzzle-piece" id="piece4"></div>
-            <div class="puzzle-piece" id="piece5"></div>
-            <div class="puzzle-piece" id="piece6"></div>
-            <div class="puzzle-piece" id="piece7"></div>
-            <div class="puzzle-piece" id="piece8"></div>
-            <div class="puzzle-piece" id="piece9"></div>
+    <div class="container">
+        <h1>Układanie puzzli ze zdjęć</h1>
+        
+        <div class="controls">
+            <div class="image-selection">
+                <h3>Wybierz zdjęcie:</h3>
+                <div class="thumbnails" id="thumbnails-container"></div>
+            </div>
+            
+            <div class="difficulty">
+                <label for="difficulty">Poziom trudności:</label>
+                <select id="difficulty">
+                    <option value="3">Łatwy (3x3)</option>
+                    <option value="4" selected>Średni (4x4)</option>
+                    <option value="5">Trudny (5x5)</option>
+                    <option value="6">Bardzo trudny (6x6)</option>
+                </select>
+            </div>
+            
+            <button id="start-btn">Rozpocznij układanie</button>
+            <button id="reset-btn" disabled>Resetuj</button>
+            <button id="show-image-btn" disabled>Pokaż obraz</button>
         </div>
+        
+        <img id="original-image" style="display: none;">
+        <div id="puzzle-container"></div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
